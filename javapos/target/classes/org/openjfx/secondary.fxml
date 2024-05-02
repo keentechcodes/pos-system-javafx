@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.openjfx.SecondaryController">
+   <children>
+      <SplitPane dividerPositions="0.2505567928730512, 0.7505567928730512" focusTraversable="true" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+         <items>
+            <AnchorPane style="-fx-background-color: skyblue;">
+               <children>
+                  <Label alignment="CENTER" layoutX="81.0" layoutY="21.0" minWidth="60.0" prefWidth="-1.0" style="&#10;" text="ORDER" textAlignment="CENTER" textFill="WHITE" wrapText="false">
+                     <font>
+                        <Font size="18.0" fx:id="x1" />
+                     </font>
+                  </Label>
+                  <Button layoutX="50.0" layoutY="481.0" mnemonicParsing="false" onAction="#complete" style="-fx-background-color: lightgreen;" text="COMPLETE" />
+                  <Button layoutX="140.0" layoutY="515.0" mnemonicParsing="false" onAction="#reset" style="-fx-background-color: lightgrey;" text="RESET" />
+                  <TextField fx:id="money" layoutX="95.0" layoutY="412.0" opacity="0.0" prefHeight="26.0" prefWidth="82.0" promptText="Enter Money" />
+                  <Button fx:id="okButton" disable="true" layoutX="175.0" layoutY="412.0" mnemonicParsing="false" onAction="#calculate" opacity="0.0" text="OK" />
+                  <TextArea fx:id="totalArea" editable="false" layoutX="11.0" layoutY="355.0" prefHeight="46.0" prefWidth="200.0" />
+                  <Button layoutX="33.0" layoutY="515.0" mnemonicParsing="false" onAction="#printReceipt" style="-fx-background-color: yellow;" text="PRINT RECEIPT" />
+                  <Text fx:id="insufficient" fill="WHITE" layoutX="84.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+                  <ListView fx:id="list" layoutX="11.0" layoutY="59.0" prefHeight="297.0" prefWidth="200.0" />
+                  <Label fx:id="printedLabel" layoutX="34.0" layoutY="548.0" opacity="0.0" text="RECEIPT PRINTED" textFill="WHITE" />
+               </children>
+            </AnchorPane>
+            <ScrollPane prefHeight="-1.0" prefWidth="-1.0">
+               <content>
+                  <TabPane prefHeight="696.0" prefWidth="440.0" tabClosingPolicy="UNAVAILABLE">
+                     <tabs>
+                        <Tab text="FOOD">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Button fx:id="hotdogButton" contentDisplay="TOP" layoutX="15.0" layoutY="209.0" mnemonicParsing="false" onAction="#hotdogPressed" onMouseEntered="#hotdogDescription" onMouseExited="#clearDetails" prefHeight="191.0" prefWidth="172.0" text="HOTDOG">
+                                       <graphic>
+                                          <ImageView fx:id="hotdogButton" fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@hotdog.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="chorizoButton" contentDisplay="TOP" layoutX="14.0" layoutY="21.0" mnemonicParsing="false" onAction="#chorizoPressed" onMouseEntered="#chorizoDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="CHORIZO">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@chorizo.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="spamButton" contentDisplay="TOP" layoutX="200.0" layoutY="19.0" mnemonicParsing="false" onAction="#spamPressed" onMouseEntered="#spamDescription" onMouseExited="#clearDetails" prefHeight="178.0" prefWidth="172.0" text="SPAM">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@spam.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="cornedBeefButton" contentDisplay="TOP" layoutX="200.0" layoutY="209.0" mnemonicParsing="false" onAction="#cornedPressed" onMouseEntered="#cornedDescription" onMouseExited="#clearDetails" prefHeight="191.0" prefWidth="172.0" text="CORNED BEEF">
+                                       <graphic>
+                                          <ImageView fx:id="hotdogButton1" fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@cornedbeef.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="tapsilogButton" contentDisplay="TOP" layoutX="15.0" layoutY="414.0" mnemonicParsing="false" onAction="#tapsilogPressed" onMouseEntered="#tapsilogDescription" onMouseExited="#clearDetails" prefHeight="191.0" prefWidth="172.0" text="TAPSILOG">
+                                       <graphic>
+                                          <ImageView fx:id="hotdogButton2" fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@tapsilog.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button fx:id="siomaiButton1" contentDisplay="TOP" layoutX="199.0" layoutY="414.0" mnemonicParsing="false" onAction="#siomaiPressed" onMouseEntered="#siomaiDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="SIOMAI">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@siomairice.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="DRINK">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="306.0" prefWidth="296.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Button fx:id="coffeeButton" contentDisplay="TOP" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#coffeePressed" onMouseEntered="#coffeeDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="COFFEE">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@coffee.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="210.0" layoutY="24.0" mnemonicParsing="false" onAction="#wintermelonPressed" onMouseEntered="#wintermelonDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="WINTERMELON">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@wintermelon.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="14.0" layoutY="218.0" mnemonicParsing="false" onAction="#chocolatePressed" onMouseEntered="#chocolateDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="CHOCOLATE">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@chocolate.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="210.0" layoutY="218.0" mnemonicParsing="false" onAction="#teaPressed" onMouseEntered="#teaDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="TEA">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@regulartea.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="14.0" layoutY="406.0" mnemonicParsing="false" onAction="#taroPressed" onMouseEntered="#taroDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="TARO">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@taromilktea.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="210.0" layoutY="406.0" mnemonicParsing="false" onAction="#greenPressed" onMouseEntered="#greenDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="GREEN">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@milkfoamgreentea.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                        <Tab text="MISC">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <Button contentDisplay="TOP" layoutX="20.0" layoutY="29.0" mnemonicParsing="false" onAction="#servicePressed" onMouseEntered="#serviceDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="SERVICE">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@service%20(1).png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                    <Button contentDisplay="TOP" layoutX="220.0" layoutY="29.0" mnemonicParsing="false" onAction="#deliveryPressed" onMouseEntered="#deliveryDescription" onMouseExited="#clearDetails" prefHeight="174.0" prefWidth="174.0" text="DELIVERY">
+                                       <graphic>
+                                          <ImageView fitHeight="142.0" fitWidth="130.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@delivery.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children></AnchorPane>
+                           </content>
+                        </Tab>
+                     </tabs>
+                  </TabPane>
+               </content>
+            </ScrollPane>
+            <AnchorPane style="-fx-background-color: skyblue;">
+               <children>
+                  <Label alignment="CENTER" font="$x1" layoutX="78.0" layoutY="21.0" style="&#10;" text="DETAILS" textAlignment="CENTER" textFill="#fffdfd" wrapText="false" />
+                  <TextArea fx:id="detailsField" editable="false" layoutX="11.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" />
+                  <Button fx:id="backButton" layoutX="162.0" layoutY="562.0" mnemonicParsing="false" onAction="#switchToPrime" text="EXIT" />
+                  <Button fx:id="addMenu" layoutX="119.0" layoutY="563.0" mnemonicParsing="false" onAction="#switchToEdit">
+                     <graphic>
+                        <ImageView fitHeight="16.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@plus.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <HBox id="HBox" alignment="CENTER_LEFT" spacing="5.0" VBox.vgrow="NEVER">
+         <padding>
+            <Insets bottom="3.0" left="3.0" right="3.0" top="3.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>

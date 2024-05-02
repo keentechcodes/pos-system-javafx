@@ -1,0 +1,14 @@
+RECEIPT:
+10-06-2020.03.50.27
+-----------------------------------------
+     Quantity:    Item:   SubTotal:
+	2x         CHORIZO  PHP200
+	2x         SPAM        PHP220
+	1x         HOTDOG      PHP90
+	1x       CORNED BEEF   PHP100
+	3x       COFFEE     PHP150
+	2x     WINTERMELON  PHP140
+	3x     CHOCOLATE PHP210
+	2x               TEA   PHP140
+	3x              TARO     PHP210
+	1x              GREEN     PHP70
